@@ -30,9 +30,9 @@ public class FibonacciServlet extends HttpServlet
         			"<title>Fibonacci Sequence</title> \n" +
         		"</head> \n" +
         		"<body> \n" +
-        			"<font size=\"12px\" Fibonacci=\"\">" +
-        			"You have entered a length of : "+ length +"\n" +
-        			"Your job identification number is : "+ jobID +" " +
+        			"<font size=\"10px\" Fibonacci=\"\">" +
+        			"You have entered a length of : "+ length +" " +
+        			"\r\nYour job identification number is : "+ jobID +" " +
         			"</font> \n" +
         		"</body> \n" +
         	"</html>");

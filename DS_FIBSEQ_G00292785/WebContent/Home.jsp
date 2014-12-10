@@ -8,9 +8,9 @@
 </head>
 <body>
 	<form action="FibonacciServlet" method="get">			
-		Please enter a number to calculate fibonacci up to: <br>
-		//<input type="hidden" />
-		<input type="text" name="length" size="60px">
+		Please enter fibonacci sequence length? : <br>
+		<input type="hidden" />
+		<input type="text" name="length" size="10px">
 		<input type="submit" value="submit">						
 	</form>	
 </body>
