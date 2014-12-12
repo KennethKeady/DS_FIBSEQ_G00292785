@@ -4,5 +4,5 @@ import java.rmi.*;
 
 public interface RemoteFibonacci extends Remote
 {
-	public int getFibSequence(int length) throws RemoteException;
+	public String getFibonacciSequence(int length) throws RemoteException;
 }

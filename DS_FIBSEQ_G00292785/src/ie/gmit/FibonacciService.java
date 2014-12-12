@@ -4,14 +4,17 @@ import java.util.*;
 
 public class FibonacciService 
 {
+	
+	Timer systemTimer;
+	
 	private LinkedList<FibonacciRequest> inQueue = new LinkedList<FibonacciRequest>();
 	private Map<Integer , String> outQueue = new HashMap<Integer , String>();
 	
 	public int add(int length)
 	{
-		int randNum = (int)(Math.random() * length + System.currentTimeMillis());
-		inQueue.add(new FibonacciRequest(randNum, length));
-		return randNum;
+		int random = (int)(Math.random() * length + System.currentTimeMillis());
+		inQueue.add(new FibonacciRequest(random, length));
+		return random;
 	}
 	
 	public String getResponse(int jobID)
@@ -28,4 +31,10 @@ public class FibonacciService
 			return null;
 		}
 	}
+	
+	public void put(int jobID,String fibNum)
+	{
+		outQueue.put(jobID, fibNum);
+	}
+	
 }
