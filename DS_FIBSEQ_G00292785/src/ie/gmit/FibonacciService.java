@@ -12,11 +12,12 @@ public class FibonacciService
 	
 	public int add(int length)
 	{
-		int random = (int)(Math.random() * length + System.currentTimeMillis());
+		Random rand = new Random();
+		int random = (int)(rand.nextInt(Integer.MAX_VALUE) + 1);
 		inQueue.add(new FibonacciRequest(random, length));
 		return random;
 	}
-	
+		
 	public String getResponse(int jobID)
 	{
 		if (outQueue.containsKey(jobID)) 
@@ -32,9 +33,9 @@ public class FibonacciService
 		}
 	}
 	
-	public void put(int jobID,String fibNum)
+	public void put(int jobID,String fibonacciNum)
 	{
-		outQueue.put(jobID, fibNum);
+		outQueue.put(jobID, fibonacciNum);
 	}
 	
 }

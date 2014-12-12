@@ -4,14 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Fibonacci Sequence</title>
+<title>Result Page</title>
 </head>
 <body>
-	<form action="FibonacciServlet" method="get">			
-		Please enter fibonacci sequence length? : <br>
-		<input type="hidden" name="Input" value="add">
-		<input type="text" name="length" size="10px">
-		<input type="submit" value="enter">						
-	</form>	
+	<%out.println(request.getParameter("fib"));%>
+	<form action="Home.jsp">
+	<input type="submit" value="Home">
 </body>
 </html>

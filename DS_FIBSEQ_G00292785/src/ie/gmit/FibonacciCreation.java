@@ -1,6 +1,7 @@
 package ie.gmit;
 
-import java.rmi.*;
+import java.math.BigInteger;
+import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 public class FibonacciCreation extends UnicastRemoteObject implements RemoteFibonacci
@@ -21,20 +22,25 @@ public class FibonacciCreation extends UnicastRemoteObject implements RemoteFibo
 	
 	public String getFibonacciSequence(int length) throws RemoteException 
 	{
-		if (length < 0) 
-		{
-			return " ";
-        }
-		
-		else if(length == 1)
-		{
-			return "0";
+		switch(length){
+		case 0:
+			return "1";
+			
+		case 1:
+			return "1, 1";
+			default:
+				BigInteger f1 = BigInteger.ONE;
+				BigInteger f2 = BigInteger.ONE;
+				BigInteger fib = BigInteger.ZERO;
+				StringBuffer fibSequence = new StringBuffer("0, 1, 1, ");
+				for (int i = 0; i < length-3; i++) {
+					fib = f1.add(f2);
+					fibSequence.append(fib).append(", ");
+					f1 = f2;
+					f2 = fib;
+				}
+				return fibSequence.toString();
 		}
-		
-        else 
-        {
-        	return getFibonacciSequence(length-1)+getFibonacciSequence(length-2);
-        }
 	}
 	
 	public RemoteFibonacci getRemote() 
