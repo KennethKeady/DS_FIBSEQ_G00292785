@@ -10,7 +10,5 @@ public class FibonacciClient
 		RemoteFibonacci fms = (RemoteFibonacci) Naming.lookup("rmi://localhost:1050/fibonacciService");
 		String rmiRunner = fms.getFibonacciSequence(length);
 		return rmiRunner;
-	}
-
-	
+	}	
 }
